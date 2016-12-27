@@ -1,4 +1,5 @@
 @import "_variables";
+@import "paralax";
 
 * {
   box-sizing: border-box;
@@ -6,17 +7,33 @@
   padding: 0;
 }
 
-html {
+.text-center {
+  text-align: center;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+
+
+
   body {
     font-family: $font-base;
     font-size: $font-size-base;
     height: 100%;
     overflow: hidden;
-    background-color: #ffffff;
-    color: #ffffff;
+    background-color: $c-base;
+  }
+
+    .hide {
+      display: none;
+    }
+
 
     a, a:hover {
       text-decoration: none;
+      color: $c-base;
     }
 
     .clearfix:after {
@@ -32,7 +49,12 @@ html {
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: #ffffff;
+      position: fixed;
+      color: $c-base;
+
+      & .show {
+        @extend .show;
+      }
 
       .content {
         max-width: 1470px;
@@ -40,156 +62,7 @@ html {
         margin: 20px 20px 0;
       }
 
-      .scene {
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        background-color: #0f0f13;
-        width: 100%;
-        height: 100%;
-      }
-      .scene li {
-        /*top: 50% !important;
-			left: 50% !important;*/
-      }
-
-      .layer {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-      }
-
-      .layer .imatge {
-
-        //height: 2000px;
-        //width: 4000px;
-        //top: -1000px;
-        //left: -2000px;
-
-        position: absolute;
-
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-
-        animation-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
-        animation-name: float;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-
-      @keyframes float {
-        0% {
-          transform: translate(0%, 0%);
-        }
-        100% {
-          transform: translate(100%, 100%);
-        }
-      }
-
-      .layer img {
-        width: 100%;
-      }
-
-      /* DUST DELANTE */
-
-      #img-1 {
-        opacity: 0.8;
-        background: url('../img/dust-delante.png');
-        background-repeat: repeat;
-        animation-duration: 330s;
-        -webkit-animation-direction: normal; /* Chrome, Safari, Opera */
-        animation-direction: normal;
-      }
-
-      /* DUST MEDIO */
-
-      #img-2 {
-        opacity: 1;
-        background: url('../img/dust-medio.png');
-        background-repeat: repeat;
-        animation-duration: 555s;
-        -webkit-animation-direction: normal; /* Chrome, Safari, Opera */
-        animation-direction: normal;
-      }
-
-      /* FONDO NEGRO ESTRELLAS GRISES */
-
-      #img-3 {
-        opacity: 1;
-        background: url('../img/bg-dust.png');
-        background-repeat: repeat;
-        /*animation-duration: 800s;*/
-        -webkit-animation: 800s ease-in-out infinite;
-        -webkit-animation-direction: normal; /* Chrome, Safari, Opera */
-        animation-direction: normal;
-      }
-
-      /* AZUL */
-
-      .color1 {
-        -webkit-animation: color1 10s ease-in-out infinite;
-      }
-
-      @keyframes color1 {
-        0% {
-          -webkit-transform: rotate(0deg) translateY(0);
-        }
-        25% {
-          -webkit-transform: rotate(-3deg) translateY(-25px) translateX(-25px);
-        }
-        50% {
-          -webkit-transform: rotate(-3deg) translateY(-50px) translateX(-60px);
-        }
-        75% {
-          -webkit-transform: rotate(-3deg) translateY(-25px) translateX(-25px);
-        }
-        100% {
-          -webkit-transform: rotate(0deg) translateY(0);
-        }
-      }
-
-      /* LILA */
-      .colors {
-        left: 50% !important;
-        top: 50% !important;
-      }
-      .color2 {
-        -webkit-animation: color2 18s ease-in-out infinite;
-      }
-
-      @keyframes color2 {
-        50% {
-          -webkit-transform: rotate(8deg) scale(0.7) translateY(30px) translateX(60px);
-        }
-      }
-      /* ROJO */
-
-      .color3 {
-        -webkit-animation: color3 6s ease-in-out infinite;
-      }
-
-      @keyframes color3 {
-        50% {
-          -webkit-transform: rotate(-20deg) translateY(-30px) translateX(45px);
-        }
-      }
-      /* VERDE */
-
-      .color4 {
-        -webkit-animation: color4 12s ease-in-out infinite;
-      }
-
-      @keyframes color4 {
-        50% {
-          -webkit-transform: rotate(8deg) scale(1.2) translateY(10px) translateX(-10px);
-        }
-      }
-
       .header {
-        text-transform: uppercase;
         position: relative;
         overflow: hidden;
         margin-bottom: 60px;
@@ -281,8 +154,7 @@ html {
 
       }
 
-
-      .nav__wrapper {
+      .nav {
         height: 100%;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.9);
@@ -293,24 +165,29 @@ html {
         color: white;
         overflow: hidden;
         z-index: 2;
-        transition:  opacity .1s linear;
+        transition: all 0.6s linear;
+        padding: 153px 0 0;
+        font-size: $font-size-base + 31;
+        display: none;
 
         &.show {
           opacity: 1;
         }
 
+        &__wrapper {
+          font-weight: 600;
+          letter-spacing: 4px;
+        }
       }
+    }
 
       .main-page {
 
-
-
-
         &__h1 {
           text-align: center;
-          color: $c-white;
-          font-family: 'Reem Kufi', sans-serif;
-          font-size: 80px;
+          color: $c-base;
+          font-family: $font-header;
+          font-size: $font-size-h1;
           letter-spacing: 1.5px;
           font-weight: 700;
           opacity: 0;
@@ -325,6 +202,7 @@ html {
           -ms-transform: translateY(0);
           transform: translateY(0);
           visibility: visible;
+          display: block;
         }
 
         &__tech {
@@ -338,7 +216,7 @@ html {
           &-list {
             margin-left: 13px;
             display: inline-block;
-            font-size: $font-size-base + 8;
+            font-size: $font-size-base + 4;
 
             &:first-child {
               margin-left: 0;
@@ -354,13 +232,14 @@ html {
               margin-right: 13px;
               width: 6px;
               height: 6px;
-              background-color: #00c1f7;
+              background-color: $c-circle;
               border-radius: 50%;
               vertical-align: middle;
             }
           }
         }
       }
+
       .footer {
         height: 40px;
         background-color: #ffffff;
@@ -372,7 +251,6 @@ html {
       }
 
       .animate-mouse {
-
         cursor: pointer;
         width: 26px;
         height: 44px;
@@ -383,6 +261,7 @@ html {
         -ms-transform: translateY(80px);
         transform: translateY(80px);
         bottom: 120px;
+
 
         &__circle {
           animation: floating-arrow ease-in-out 1.5s infinite;
@@ -396,27 +275,61 @@ html {
           width: 6px;
           position: absolute;
         }
-
-        &__img {
-          //position: absolute;
-        }
-
-        @keyframes floating-arrow {
-          from {
-            opacity: 1
-          }
-          to {
-            opacity: 0;
-            transform: translate(-50%, 30px)
-          }
-        }
-
       }
 
 
-    }
+
+@keyframes floating-arrow {
+  from {
+    opacity: 1
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, 30px)
+  }
+}
+
+//page 2
+.works-page {
+  height: 100%;
+  display: none;
+
+  & .hide {
+    @extend .hide;
   }
 
 }
 
-//page 2
+.module-scroll {
+  display: none;
+  //background: $c-base;
+  position: absolute;
+  //-ms-transform: translateY(80px);
+  //transform: translateY(80px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00c1f7;
+
+  &.show {
+    display: block;
+  animation: transform 2s;
+  }
+
+}
+
+@keyframes transform {
+  0% {
+    height: 0;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0;
+    top: 0;
+  }
+}
