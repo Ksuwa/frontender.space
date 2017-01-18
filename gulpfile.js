@@ -14,7 +14,7 @@ var connect = require('gulp-connect');
 //************************************
 gulp.task('image', function() {
 	gulp.src('src/img/**/')
-		.pipe(imagemin())
+		// .pipe(imagemin())
 		.pipe(gulp.dest('dist/img'))
 });
 
@@ -43,6 +43,17 @@ gulp.task('sass', function() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest('dist/css'))
 		.pipe(connect.reload());
+});
+
+//************************************
+// GULP LIB
+//************************************
+gulp.task('lib', function() {
+	return gulp.src([
+			'src/lib/**/*.css',
+			'src/lib/**/*.js'
+		])
+		.pipe(gulp.dest('dist/lib'));
 });
 
 //************************************
@@ -88,7 +99,7 @@ gulp.task('watch', function() {
 // GULP BUILD
 //**************************************
 gulp.task('build', ['clean'], function() {
-	gulp.start('jade', 'sass', 'script', 'image');
+	gulp.start('jade', 'sass', 'script', 'image', 'lib');
 });
 
 //**************************************

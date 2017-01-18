@@ -1,83 +1,132 @@
 doctype HTML5
 html
-  head
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(charset='UTF-8')
-    block title
-    block headFonts
-      link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700&subset=cyrillic', rel='stylesheet')
-      link(href='http://allfont.ru/allfont.css?fonts=roboto-condensed-light', rel='stylesheet')
-      link(href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet")
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(charset='UTF-8')
+        block title
+        block headFonts
+            link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700&subset=cyrillic', rel='stylesheet')
+            link(href='http://allfont.ru/allfont.css?fonts=roboto-condensed-light', rel='stylesheet')
+            link(href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet")
 
-    block headStyle
-      link(href='/css/style.min.css', rel='stylesheet')
-      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
-      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
-    block script
-      script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-      script(src='js/index.min.js')
-  body
-    .page-wrapper
-      .content.content--gradient.clearfix
-        ul#scene.scene
-          li#layer-3.layer(data-depth='0.2')
-            #img-3.imatge
-          li.layer.color1.colors(data-depth='1')
-            img(src='img/azul.png')
-          li.layer.color2.colors(data-depth='2')
-            img(src='img/lila.png')
-          li.layer.color4.colors(data-depth='0.6')
-            img(src='img/verde.png')
-          li.layer.color3.colors(data-depth='1.4')
-            img(src='img/rojo.png')
-          li#layer-2.layer(data-depth='0.45')
-            #img-2.imatge
-          li#layer-1.layer(data-depth='0.6')
-            #img-1.imatge
-        div(style='background-image: url(http://www.plasticbcn.com/assets/home/header/bg.png); background-size: 100% 100%; background-position: 50% 50%; background-repeat: no-repeat; width:100%; height:100%; position:absolute; top:0; left:0;')
-          header.header.clearfix
-            div.header__menu#menuHamburder
-              span
-              span
-              span
-          div.nav__wrapper#navWrapp
+        block headStyle
+            link(href='/css/style.min.css', rel='stylesheet')
+            link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+        block script
+            script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+            script(src='/js/index.min.js')
+    body
+        div.page-wrapper.section
+            section.main-page.page-item.active
+                ul#scene.scene
+                    li#layer-3.layer(data-depth='0.2')
+                        #img-3.imatge
+                    li.layer.color1.colors(data-depth='1')
+                        img(src='img/azul.png')
+                    li.layer.color2.colors(data-depth='2')
+                        img(src='img/lila.png')
+                    li.layer.color4.colors(data-depth='0.6')
+                        img(src='img/verde.png')
+                    li.layer.color3.colors(data-depth='1.4')
+                        img(src='img/rojo.png')
+                    li#layer-2.layer(data-depth='0.45')
+                        #img-2.imatge
+                    li#layer-1.layer(data-depth='0.6')
+                        #img-1.imatge
+                div(style='background-image: url(http://www.plasticbcn.com/assets/home/header/bg.png); background-size: 100% 100%; background-position: 50% 50%; background-repeat: no-repeat; width:100%; height:100%; position:absolute; top:0; left:0;')
+                    block header
+                        header.header.clearfix.upper
+                            div.header__menu.clearfix
+                                span
+                                span
+                                span
+                        div.nav
+                            ul.list-unstyled.nav__wrapper.text-center.upper
+                                li
+                                    a(href='#') home
+                                li
+                                    a(href='#') works
+                                li
+                                    a(href='#') about
 
-          container.main-page
-            h1.text-center.main-page__h1#main-h1 Frontend Development
-            ul.text-center.list-unstyled.clearfix.main-page__tech
-              li.main-page__tech-list HTML5
-              li.main-page__tech-list CSS3
-              li.main-page__tech-list Saas
-              li.main-page__tech-list Java Script
-              li.main-page__tech-list БЭМ
-              li.main-page__tech-list Jade
-              li.main-page__tech-list Gulp
-              li.main-page__tech-list Git
-            div.animate-mouse
-              span.animate-mouse__circle
-              img(src='img/mouse.svg').animate-mouse__img
-        footer.footer
-        script(type='text/javascript', src='js/parallax.min.js')
-        script.
-          var scene = document.getElementById('scene');
-          var parallax = new Parallax(scene);
-          resizeBackgroundHome();
-        script.
-          $(document).ready(function () {
-              $('#main-h1').addClass("show");
-              $('.main-page__tech').addClass("show");
-              $('.animate-mouse').addClass("show");
+                    container.container-content.clearfix
+                        h1.text-center.main-page__h1#main-h1 Frontend Development
+                        ul.text-center.list-unstyled.clearfix.main-page__tech
+                            li.main-page__tech-list HTML5
+                            li.main-page__tech-list CSS3
+                            li.main-page__tech-list SASS
+                            li.main-page__tech-list JavaScript
+                            li.main-page__tech-list BEM
+                            li.main-page__tech-list Jade
+                            li.main-page__tech-list Gulp
+                            li.main-page__tech-list Git
+                        div.animate-mouse
+                            span.animate-mouse__circle
+                            img(src='img/mouse.svg').animate-mouse__img
 
-            $('#menuHamburder').click(function () {
-              $(this).toggleClass('open');
-              $('#navWrapp').toggleClass("show");
-            });
+                        //  --WORKS--
+            div.wrapper-show-sections.hide-down
+                section.features-works#works.page-item
+                    block header
+                    h2.features-works__h2.upper.text-center
+                        i.fa.fa-circle.features-works__h2--circle
+                        | works
+                        i.fa.fa-circle.features-works__h2--circle
+                    div.features-works__section.clearfix
+                        a(href='http://university.netology.ru/u/dynnikova/1.2/index.html').features-works__link
+                            img.img-responsive.features-works__img(src='img/test.jpg')
+                            div.features-works__description-bg.features-works__description-bg--red
+                                div.features-works__description-text
+                                    p.upper.text-center html5, sass, css3 animation
+                        a(href='http://university.netology.ru/u/dynnikova/land/AL-55/index.html').features-works__link
+                            img.img-responsive.features-works__img(src='img/video.jpg')
+                            div.features-works__description-bg.features-works__description-bg--yellow
+                                div.features-works__description-text
+                                    p.upper.text-center html5, html5 video API, css3, JavaScript
 
-          });
+                        a(href='http://ff78-decor.ru/').features-works__link
+                            img.img-responsive.features-works__img(src='img/flower.jpg')
+                            div.features-works__description-bg.features-works__description-bg--blue
+                                div.features-works__description-text
+                                    p.upper.text-center jade, sass, jQuery, Gulp, bootstrap, responsive
+
+                        a(href='http://university.netology.ru/u/dynnikova/land/AL-75/2/index.html').features-works__link
+                            img.img-responsive.features-works__img(src='img/yout.jpg')
+                            div.features-works__description-bg.features-works__description-bg--green
+                                div.features-works__description-text
+                                    p.upper.text-center html5, css3, mobile responsive
+
+                        a(href='http://vipgift.su/').features-works__link
+                            img.img-responsive.features-works__img(src='img/vipgift.jpg')
+                            div.features-works__description-bg.features-works__description-bg--orange
+                                div.features-works__description-text
+                                    p.upper.text-center html5, jade, sass, gulp, responsive
+
+                        a(href='http://pst.fa78.ru/').features-works__link
+                            img.img-responsive.features-works__img(src='img/pst.jpg')
+                            div.features-works__description-bg.features-works__description-bg--purpure
+                                div.features-works__description-text
+                                    p.upper.text-center html5, sass, css3 animation, gulp, jade
 
 
 
+                script(type='text/javascript', src='lib/parallax.js')
+                script.
+                    $(document).ready(function () {
+                        //Paralax
+                        function resizeBackgroundHome() {
+                            var e = 1279, t = 942, a = e / t;
+                            if (amplada / alcada > a)var i = amplada, s = amplada / a; else var s = alcada, i = alcada * a;
+                            $(".scene li.colors").css({
+                                width: i - 40 + "px",
+                                height: s - 40 + "px",
+                                marginTop: -((s - 20) / 2) + "px",
+                                marginLeft: -((i - 20) / 2) + "px"
+                            })
+                        }
 
-
-
-
+                        var alcada = $(window).height() - 40, amplada = $(window).width() - 40, lastAnimation = 0, animationTime = 1200, quietPeriod = 100, temps1 = 600, temps2 = 600, easingType = "easeInOutCubic", easingType2 = "easeInOutCubic";
+                        var scene = document.getElementById('scene');
+                        var parallax = new Parallax(scene);
+                        resizeBackgroundHome();
+                    });
