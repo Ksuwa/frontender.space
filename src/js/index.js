@@ -34,8 +34,8 @@ $(document).ready(function () {
         // setTimeout(function () {
         //     isScrolling = false;
         // }, 1000);
-        $('.main-page').addClass('hide-up').removeClass('active');
-        $('.wrapper-show-sections').removeClass('hide-down').addClass('active');
+        // $('.main-page').addClass('hide-up').removeClass('active');
+        // $('.wrapper-show-sections').removeClass('hide-down').addClass('active');
     };
 
 
@@ -50,32 +50,32 @@ $(document).ready(function () {
         //     isScrolling = false;
         // }, 1000);
 
-            $('.wrapper-show-sections')
-                .addClass('hide-down')
-                .removeClass('active');
-
-        $('.main-page').addClass('active').removeClass('hide-up');
+        //     $('.wrapper-show-sections')
+        //         .addClass('hide-down')
+        //         .removeClass('active');
+        //
+        // $('.main-page').addClass('active').removeClass('hide-up');
 
     }
 
-    $(window).bind('mousewheel', function (event) {
-        var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
-        console.log(delta);
-        var target = event.target;
-        if (delta > 0) {
-            // upscroll code
-            if (target.targetName = $('div.wrapper-show-sections')){
-            // previousSection();
-            }
-            console.log('up');
-
-        } else {
-            console.log(sectionLast);
-            if (target.targetName = $('section.main-page')) {
-                nextSection();
-            }
-            console.log('down');
-        }
-    });
+    // $(window).bind('mousewheel', function (event) {
+    //     var delta = event.originalEvent.wheelDelta || -event.originalEvent.detail;
+    //     console.log(delta);
+    //     var target = event.target;
+    //     if (delta > 0) {
+    //         // upscroll code
+    //         if (target.targetName = $('div.wrapper-show-sections')){
+    //         // previousSection();
+    //         }
+    //         console.log('up');
+    //
+    //     } else {
+    //         console.log(sectionLast);
+    //         if (target.targetName = $('section.main-page')) {
+    //             nextSection();
+    //         }
+    //         console.log('down');
+    //     }
+    // });
 });
 
