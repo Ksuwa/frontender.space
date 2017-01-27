@@ -74,13 +74,11 @@ body {
   font-family: $font-base;
   font-size: $font-size-base;
   height: 100%;
-  //overflow: hidden;
   background-color: $c-base;
 
   .page-wrapper {
     width: 100%;
     height: 100%;
-    //overflow: hidden;
     color: $c-base;
     min-height: 500px;
     position: relative;
@@ -94,25 +92,12 @@ body {
     }
   }
 
-  .wrapper-show-sections {
-    height: 100%;
-    //position: absolute;
-    width: 100%;
-    transition: all 1.0s ease-in-out;
-
-    &.hide-down {
-      transform: translateY(100%);
-    }
-  }
-
   .main-page {
     width: 100%;
     height: 100%;
-    //overflow: hidden;
     color: $c-base;
     min-height: 537px;
     z-index: 5;
-    //position: absolute;
     border: 20px solid #ffffff;
     transition: all 1.0s ease-in-out;
 
@@ -192,7 +177,7 @@ body {
     color: white;
     overflow: hidden;
     z-index: 2;
-    @include transition(all 0.6s linear);
+    @include transition(all 0.9s linear);
     padding: 153px 0 0;
     font-size: $font-size-base + 31;
     display: none;
@@ -208,6 +193,17 @@ body {
   }
 
   .main-page {
+    position: relative;
+
+    &__content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      max-height: 200px;
+    }
 
     &__h1 {
       color: $c-base;
@@ -216,17 +212,15 @@ body {
       letter-spacing: 1.5px;
       font-weight: 700;
       opacity: 0;
-      //@include transform(translateY(80px));
-      @include transition(all 1s);
       visibility: hidden;
-      margin-top: 150px;
+      @include transition(all 1.5s);
     }
 
     &__tech {
       font-size: 0;
       letter-spacing: 1px;
       opacity: 0;
-      @include transition(all 2s);
+      @include transition(all 2.5s);
 
       &-list {
         margin-left: 13px;
@@ -264,6 +258,7 @@ body {
     transition: all 1s;;
     visibility: hidden;
     bottom: 15%;
+    @include transition(all 3s);
 
     &__circle {
       @include animation(floating-arrow ease-in-out 1.5s infinite);
@@ -291,6 +286,8 @@ body {
 
   .main-page__h1, .main-page__tech, .animate-mouse {
     @include transform(translateY(80px));
+
+
   }
 
   //WORKS
@@ -299,7 +296,8 @@ body {
   .features-works {
     //height: 100%;
     padding: 36px 0 0;
-    overflow: scroll;
+    //overflow-y: scroll;
+    overflow: hidden;
     z-index: 10;
 
     .header__menu {

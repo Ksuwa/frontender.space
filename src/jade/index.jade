@@ -17,7 +17,7 @@ html
             script(src='/js/index.min.js')
     body
         div.page-wrapper.section
-            section.main-page.page-item.active
+            section.main-page#home
                 ul#scene.scene
                     li#layer-3.layer(data-depth='0.2')
                         #img-3.imatge
@@ -43,13 +43,14 @@ html
                         div.nav
                             ul.list-unstyled.nav__wrapper.text-center.upper
                                 li
-                                    a(href='#') home
+                                    a(href='#home') home
                                 li
-                                    a(href='#') works
+                                    a(href='#works') works
                                 li
-                                    a(href='#') about
+                                    a(href='#about') about
 
                     container.container-content.clearfix
+                      div.main-page__content
                         h1.text-center.main-page__h1#main-h1 Frontend Development
                         ul.text-center.list-unstyled.clearfix.main-page__tech
                             li.main-page__tech-list HTML5
@@ -60,13 +61,13 @@ html
                             li.main-page__tech-list Jade
                             li.main-page__tech-list Gulp
                             li.main-page__tech-list Git
+                      a(href='#works')
                         div.animate-mouse
-                            span.animate-mouse__circle
-                            img(src='img/mouse.svg').animate-mouse__img
+                          span.animate-mouse__circle
+                          img(src='img/mouse.svg').animate-mouse__img
 
                         //  --WORKS--
-            section.features-works#works.page-item
-                block header
+            section.features-works#works
                 h2.features-works__h2.upper.text-center
                     i.fa.fa-circle.features-works__h2--circle
                     | works
